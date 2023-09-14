@@ -62,4 +62,4 @@ begin
   writeln('The determinant of the matrix is: ', det:0:2);
 end.
 ```
-![Example of usage](https://github.com/SeanSlinder/Pascal/blob/main/determinant/determinant.png)
+!['Example of usage'](determinant.png)
