@@ -1,16 +1,16 @@
 program DeterminantCalculation;
 
-const
-  n = 5;
-
 var
-  a: array[1..n, 1..n] of double;
+  a: array of array of double;
   det: double;
-  i, j, k: integer;
+  i, j, k, n: integer;
 
 begin
   // Input the matrix elements
-  writeln('Enter the elements of the 5x5 matrix:');
+  write('Enter the n size of matrix: ');
+  readln(n);
+  SetLength(a, n+1, n+1);
+  writeln('Enter the elements of the ', n, ' x ', n, ' matrix:'); // corrected string concatenation
   for i := 1 to n do
     for j := 1 to n do
       read(a[i, j]);
