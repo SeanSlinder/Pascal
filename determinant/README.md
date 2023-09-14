@@ -62,4 +62,4 @@ begin
   writeln('The determinant of the matrix is: ', det:0:2);
 end.
 ```
-![Example of usage](/Users/seanslinder/Stuff/img/Example.png)
+![Example of usage](img/Example.png)
