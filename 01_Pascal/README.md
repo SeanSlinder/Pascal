@@ -6,7 +6,7 @@ program Fibonacci;
 var 
     n, i: integer;
     
-function fibonacci(n: integer) : integer;
+function fibonacci(n: integer) : cardinal;
 begin
     if (n=0) or (n=1) then
         fibonacci:=0
