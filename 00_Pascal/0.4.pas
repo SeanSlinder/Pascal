@@ -3,6 +3,7 @@ var
   dividend, divisor, quotient, remainder: integer;
 begin
   //Input
+  write('This is a program that returns quoteint and remainder of a division without using division operation');
   write('Type the dividend: ');
   readln(dividend);
   write('type the divisor: ');

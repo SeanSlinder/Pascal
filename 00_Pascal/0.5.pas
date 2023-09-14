@@ -4,6 +4,7 @@ var
   arr: array[1..N] of integer;
   i, minIndex, maxIndex, temp: integer;
 begin
+  writeln('This is a program that swaps the minimal and maximal numbers in the massive');
   writeln('Type 10 numbers into a massive:');
   for i := 1 to N do
   begin

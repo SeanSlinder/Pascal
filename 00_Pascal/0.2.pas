@@ -3,6 +3,7 @@ var
   a, b, c, temp: integer;
 begin
   //Input
+  writeln('This is a program that sorts three numbers in ascending order');
   write('Type first number: ');
   readln(a);
   write('Type second number: ');

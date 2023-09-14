@@ -3,6 +3,7 @@ var
   x, y, xCenter, yCenter, radius: integer;
 begin
   //Input
+  writeln('This is a program that checks if the point is in the circle');
   write('Type the radius of circle: ');
   readln(radius);
   write('Type the x-coordinate of center: ');
