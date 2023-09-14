@@ -1,4 +1,6 @@
+
 ### Calculating Determinant of a Matrix[n x n]
+
 ```pascal
 program DeterminantCalculation;
 
@@ -62,4 +64,5 @@ begin
   writeln('The determinant of the matrix is: ', det:0:2);
 end.
 ```
-![Example of usage](img/Example.png)
+
+![Example of usage](Example.png)
