@@ -10,7 +10,7 @@ begin
   write('Enter the n size of matrix: ');
   readln(n);
   SetLength(a, n+1, n+1);
-  writeln('Enter the elements of the ', n, ' x ', n, ' matrix:'); // corrected string concatenation
+  writeln('Enter the elements of the ', n, ' x ', n, ' matrix:');
   for i := 1 to n do
     for j := 1 to n do
       read(a[i, j]);
