@@ -10,7 +10,7 @@ var
 
 begin
   // Input the matrix elements
-  writeln('Enter the elements of the 3x3 matrix:');
+  writeln('Enter the elements of the 5x5 matrix:');
   for i := 1 to n do
     for j := 1 to n do
       read(a[i, j]);
