@@ -5,6 +5,20 @@ var
   det: double;
   i, j, k, n: integer;
 
+function GaussianElimination(a: array of array of double): array of array of double:
+begin
+  for i := 1 to n do
+  begin
+    for j := i + 1 to n do
+    begin
+      if a[j, i] <> 0 then
+      begin
+        for k := i + 1 to n do
+          a[j, k] := a[j, k] - a[i, k] * (a[j, i] / a[i, i]);
+      end;
+    end;
+  end;
+end;
 begin
   // Input the matrix elements
   write('Enter the n size of matrix: ');
@@ -43,14 +57,7 @@ begin
     end;
 
     // Perform Gaussian elimination
-    for j := i + 1 to n do
-    begin
-      if a[j, i] <> 0 then
-      begin
-        for k := i + 1 to n do
-          a[j, k] := a[j, k] - a[i, k] * (a[j, i] / a[i, i]);
-      end;
-    end;
+    GaussianElimination(a);
 
     // Multiply the determinant by the pivot element
     det := det * a[i, i];
