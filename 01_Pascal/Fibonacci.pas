@@ -1,20 +1,28 @@
-program Fibonacci;
-var 
-    n, i: integer;
-    
-function fibonacci(n: integer) : cardinal;
+program FibonacciAndSum;
+var
+  n, i: integer;
+  a, b, sum: Int64;
 begin
-    if (n=0) or (n=1) then
-        fibonacci:=0
-    else if (n=2) then
-        fibonacci:=1
-    else
-        fibonacci:=fibonacci(n-2)+fibonacci(n-1);
-end;
+  writeln('Enter the value of n:');
+  readln(n);
+  if n > 93 then
+  begin
+    write('Too big value');
+    Exit;
+  end;
+  a := 0;
+  b := 1;
+  sum := 0;
 
-begin
-    writeln('How many Fibonacci numbers do you want?');
-    readln(n);
-    for i:=1 to n do
-        write(fibonacci(i), ' ');
+  write('Fibonacci Sequence: ');
+  for i := 1 to n do
+  begin
+    write(a, ' ');
+    sum := sum + a;
+    b := a + b;
+    a := b - a;
+  end;
+
+  writeln;
+  writeln('Sum of the first ', n, ' Fibonacci numbers: ', sum);
 end.
