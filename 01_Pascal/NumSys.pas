@@ -1,28 +1,59 @@
 program NumberBaseConverter;
+
+//Power Function
+function power(x:integer; n:integer):int64;
 var
-  p, q, numDigits, inputDigit, decimalNumber, resultDigit, i, n: int64;
-  resultSequence: array[1..100] of int64;
+  i: integer;
+begin
+  power := 1;
+  for i := 1 to n do
+  begin
+    power := power * x;
+  end;
+end;
+
+//Main Procedure
+var
+  maxint: int64;
+  p, q, decimalNumber, numDigits, inputDigit, resultDigit, i, n: longint;
+  resultSequence: array[1..100] of longint;
 begin
   //Input: base and quantity of digits
-  Write('Введите основание системы счисления p (2<=p<10000): ');
+  Write('Введите основание системы счисления p (2<=p<=10000): ');
   Readln(p);
+  if (p < 2) or (p > 10000) then
+  begin
+    WriteLn('Ошибка: Введена некорректное основание.');
+    Exit;
+  end;
   Write('Введите количество цифр в числе с введенным основанием: ');
   Readln(numDigits);
 
-  //Variable initialization
-  decimalNumber := 0;
-
   //Digit sequence input
   Write('Введите последовательность цифр (разделите пробелами): ');
+  maxint := 2147483647;
+  decimalNumber := 0;
   for i := 1 to numDigits do
   begin
     Read(inputDigit);
     //Digit validity check
     if (inputDigit < 0) or (inputDigit >= p) then
     begin
-      WriteLn('Ошибка: Введена некорректная цифра.');
+      Write('Ошибка: Введена некорректная цифра.');
       Exit;
     end;
+    
+    //Maxint check
+    if (inputDigit * power(p, numDigits - i) > maxint) then
+    begin
+      Write('Переполнение LongInt: значение превышает 2147483647');
+      Exit
+    end;
+    if (inputDigit * power(p, numDigits - i) <= maxint) then
+    begin
+      maxint := maxint - inputDigit * power(p, numDigits - i);
+    end;
+    
     //Convertion to the base-10
     decimalNumber := decimalNumber * p + inputDigit;
   end;
